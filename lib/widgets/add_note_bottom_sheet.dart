@@ -7,12 +7,12 @@ import 'package:notes_pp/widgets/add_note_form.dart';
 class AddNoteBottmSheet extends StatelessWidget {
   const AddNoteBottmSheet({Key? key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if (state is AddNoteFailuer) {
@@ -23,8 +23,12 @@ class AddNoteBottmSheet extends StatelessWidget {
             }
           },
           builder: (context, state) {
-            return ModalProgressHUD(inAsyncCall: state is AddNoteLoading ? true : false,
-            child: AddNoteForm());
+            return ModalProgressHUD(
+              inAsyncCall: state is AddNoteLoading ? true : false,
+              child: const SingleChildScrollView(
+                child: AddNoteForm(),
+              ),
+            );
           },
         ),
       ),
