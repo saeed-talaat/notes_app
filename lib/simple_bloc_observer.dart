@@ -9,7 +9,7 @@ class SimpleBlocObserver implements BlocObserver {
 
   @override
   void onClose(BlocBase<dynamic> bloc) {
-   debugPrint("close = $bloc");
+    debugPrint("close = $bloc");
   }
 
   @override
@@ -18,7 +18,8 @@ class SimpleBlocObserver implements BlocObserver {
   }
 
   @override
-  void onDone(Bloc<dynamic, dynamic> bloc, Object? event, [Object? error, StackTrace? stackTrace]) {
+  void onDone(Bloc<dynamic, dynamic> bloc, Object? event,
+      [Object? error, StackTrace? stackTrace]) {
     // TODO: implement onDone
   }
 
@@ -33,7 +34,8 @@ class SimpleBlocObserver implements BlocObserver {
   }
 
   @override
-  void onTransition(Bloc<dynamic, dynamic> bloc, Transition<dynamic, dynamic> transition) {
+  void onTransition(
+      Bloc<dynamic, dynamic> bloc, Transition<dynamic, dynamic> transition) {
     // TODO: implement onTransition
   }
-} 
+}

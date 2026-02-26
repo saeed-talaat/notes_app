@@ -78,13 +78,10 @@ class _ColorsListViewEditState extends State<ColorsListViewEdit> {
   late int currentIndex;
 
   @override
- void initState(){
-  currentIndex = kColorsList.indexOf(Color(widget.noteModel.color));
-  super.initState();
-
+  void initState() {
+    currentIndex = kColorsList.indexOf(Color(widget.noteModel.color));
+    super.initState();
   }
-
- 
 
   @override
   Widget build(BuildContext context) {

@@ -16,18 +16,18 @@ class AddNoteBottmSheet extends StatelessWidget {
           if (state is AddNoteFailuer) {
             print('failed ${state.errorMessage}');
           }
-          if (state is AddNoteSuccess)  {
+          if (state is AddNoteSuccess) {
             BlocProvider.of<NoteCubit>(context).fetchAllNote();
             Navigator.pop(context);
           }
         },
         builder: (context, state) {
-          return  AbsorbPointer(
+          return AbsorbPointer(
             absorbing: state is AddNoteLoading ? true : false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: const SingleChildScrollView(
-                child:  AddNoteForm(),
+                child: AddNoteForm(),
               ),
             ),
           );

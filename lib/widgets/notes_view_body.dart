@@ -12,13 +12,13 @@ class NotesViewBody extends StatefulWidget {
 }
 
 class _NotesViewBodyState extends State<NotesViewBody> {
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     BlocProvider.of<NoteCubit>(context).fetchAllNote();
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,12 +28,13 @@ class _NotesViewBodyState extends State<NotesViewBody> {
           const SizedBox(
             height: 50,
           ),
-          const CustomAppBar(title: 'Notes', icon: Icons.search,),
+          const CustomAppBar(
+            title: 'Notes',
+            icon: Icons.search,
+          ),
           Expanded(child: CutsomListView())
         ],
       ),
     );
   }
 }
-
-

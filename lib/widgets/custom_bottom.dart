@@ -10,7 +10,6 @@ class CustomBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      
       style: ElevatedButton.styleFrom(
         backgroundColor: kPrimaryColor,
         minimumSize: Size(MediaQuery.of(context).size.width, 50),

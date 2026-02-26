@@ -7,14 +7,12 @@ import 'package:notes_pp/widgets/note_item.dart';
 
 class CutsomListView extends StatelessWidget {
   const CutsomListView({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return BlocBuilder<NoteCubit, NoteState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NoteCubit>(context).notes;
+        List<NoteModel> notes = BlocProvider.of<NoteCubit>(context).notes;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: ListView.builder(

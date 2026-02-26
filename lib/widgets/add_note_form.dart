@@ -80,6 +80,3 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
-
-
-
