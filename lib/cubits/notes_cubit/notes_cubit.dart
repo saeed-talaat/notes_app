@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_pp/constants.dart';
@@ -7,6 +8,7 @@ import 'package:notes_pp/models/note_model.dart';
 class NoteCubit extends Cubit<NoteState> {
   NoteCubit() : super(NoteInitial());
 
+ 
  late List<NoteModel> notes;
   void fetchAllNote() {
     var notesBox = Hive.box<NoteModel>(kNotesBox);
@@ -14,4 +16,7 @@ class NoteCubit extends Cubit<NoteState> {
     emit(NoteSuccess());
     
   }
+
+
+   
 }
